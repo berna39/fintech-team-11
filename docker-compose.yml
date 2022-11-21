@@ -2,9 +2,32 @@ version: '3.8'
 services:
   postgres:
     image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
     restart: always 
     ports:
       - '5432:5432'
+    volumes:
+      - db-data:/data/postgres
+    networks:
+      - api-network
+  pgadmin:
+    image: dpage/pgadmin4:5.5
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_LISTEN_PORT: 80
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+    ports:
+      - '5050:80'
+    networks:
+      - api-network
+    restart: unless-stopped
+    depends_on: 
+      - postgres
   app:
     build: .
     restart: always
@@ -12,4 +35,14 @@ services:
       - '3000:3000'
     depends_on: 
       - postgres
+    networks:
+      - api-network
+volumes:
+  db-data:
+    driver: local
+  pgadmin:
+    driver: local
+networks:
+  api-network:
+    driver: bridge
   
