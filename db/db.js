@@ -10,4 +10,3 @@ const pool = new Pool({
     max: 20,
     idleTimeoutMillis: 0
 });
-

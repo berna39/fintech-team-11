@@ -1,6 +1,7 @@
 const express = require('express');
 const dotnenv = require('dotenv');
 const app = express();
+const db = require('./db/db');
 
 dotnenv.config();
 
