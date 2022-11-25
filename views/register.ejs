@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fintech11</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/app/dist/app.css" />
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+        href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+        rel="stylesheet"
+    />
+    <!-- End Style CSS -->
+
+    <link rel="shortcut icon" href="/assets/images/logo/favicon.png" />
+    <link
+        rel="apple-touch-icon-precomposed"
+        href="/assets/images/logo/favicon.png"
+    />
+</head>
+  <body class="body header-fixed">
+    <section class="register">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block-text center">
+              <h3 class="heading">Register To Rockie</h3>
+              <p class="desc fs-20">
+                Register in advance and enjoy the event benefits
+              </p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="flat-tabs">
+              <div class="content-tab">
+                <div class="content-inner">
+                    <% if(message){ %>
+                        <div class="alert alert-<%= message.type %>">
+                            <strong><%= message.message %></strong>
+                        </div>
+                    <% } %>
+                  <form action="/register" method="post">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        placeholder="Please fill your name."
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                        <label for="citizenship">Citizenship</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="citizenship"
+                            name="citizenship"
+                            placeholder="Please fill your citizenship."
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of birth</label>
+                        <input
+                            type="date"
+                            class="form-control"
+                            id="dob"
+                            name="dob"
+                            placeholder="Please fill your date of birth."
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="national_id">National ID</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="national_id"
+                            name="national_id"
+                            placeholder="Please fill your national ID."
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="address"
+                            name="address"
+                            placeholder="Please fill your address."
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="job">Job/Title</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="job"
+                            name="job"
+                            placeholder="Please fill your address."
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label
+                          >Username
+                          <span class="fs-14"
+                            >(Excluding special characters)</span
+                          ></label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="username"
+                          name="username"
+                          placeholder="Enter username"
+                          required
+                        />
+                      </div>
+                    <div class="form-group">
+                      <label
+                        >Password
+                        <span
+                          >(8 or more characters, including numbers and special
+                          characters)</span
+                        ></label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        placeholder="Please enter a password."
+                        required
+                      />
+                    </div>
+                    <button type="submit" class="btn-action">
+                      Pre-Registration
+                    </button>
+                    <div class="bottom">
+                      <p>Already have an account?</p>
+                      <a href="/login">Login</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer style-2">
+      <div class="container-fluid">
+        <div class="footer__bottom">
+          <p>
+            ©2022 Rockie.com. All rights reserved. Terms of Service | Privacy
+            Terms
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/app/js/aos.js"></script>
+    <script src="/app/js/jquery.min.js"></script>
+    <script src="/app/js/jquery.easing.js"></script>
+    <script src="/app/js/popper.min.js"></script>
+    <script src="/app/js/bootstrap.min.js"></script>
+    <script src="/app/js/app.js"></script>
+    <script src="/app/js/jquery.peity.min.js"></script>
+
+    <script src="app/js/switchmode.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+  </body>
+</html>
